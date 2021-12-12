@@ -1,6 +1,6 @@
 module.exports = {
   darkMode: 'class',
-  content: ['./storybook/**/*.{svelte,css}'],
+  content: ['./src/**/*.{svelte,css}'],
   theme: {},
   variants: {},
   plugins: [],
