@@ -1,6 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
@@ -9,7 +9,7 @@ import autoPreprocess from 'svelte-preprocess';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-    input: 'src/main.js',
+    input: 'storybook/main.js',
     output: {
         sourcemap: true,
         format: 'iife',
@@ -38,7 +38,7 @@ export default {
         // some cases you'll need additional configuration —
         // consult the documentation for details:
         // https://github.com/rollup/rollup-plugin-commonjs
-        resolve({
+        nodeResolve({
             browser: true,
             dedupe: importee =>
                 importee === 'svelte' || importee.startsWith('svelte/'),
