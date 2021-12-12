@@ -1,4 +1,4 @@
-public/bundle.*
+# public/bundle.*
 public/utils.*
 package-lock.json
 yarn.lock
